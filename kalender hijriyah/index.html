@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kalender Hijriyah Modern</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="calendar-container">
+    <h1>Kalender Hijriyah Modern</h1>
+    <button id="btnBack" onclick="window.location.href='../index.html'">Back</button>
+    <div id="locationDisplay" class="location">Mendeteksi lokasi...</div>
+    <div class="controls">
+      <select id="yearSelect"></select>
+      <select id="monthSelect"></select>
+    </div>
+    <!-- Tombol Navigasi Bulan & Lihat Daftar Acara -->
+    <div class="nav-buttons">
+      <button id="prevMonth">Bulan Sebelumnya</button>
+      <button id="nextMonth">Bulan Selanjutnya</button>
+      <button id="viewEventList">Lihat Daftar Acara</button>
+    </div>
+    <div class="result" id="result">Pilih tahun dan bulan untuk menampilkan kalender.</div>
+    <div class="calendar-grid" id="calendarGrid"></div>
+  </div>
+
+  <!-- Modal untuk Edit Acara -->
+  <div id="eventModal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal" class="close">&times;</span>
+      <h2>Edit Acara</h2>
+      <label for="eventTitle">Judul Acara:</label>
+      <input type="text" id="eventTitle" placeholder="Judul Acara">
+      <label for="eventNote">Catatan:</label>
+      <textarea id="eventNote" placeholder="Catatan acara"></textarea>
+      <div class="modal-buttons">
+        <button id="saveEvent">Simpan</button>
+        <button id="deleteEvent">Hapus</button>
+        <button id="cancelEvent">Batal</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal untuk Daftar Acara -->
+  <div id="eventListModal" class="list-modal">
+    <div class="list-modal-content">
+      <span id="closeListModal" class="list-close">&times;</span>
+      <h2>Daftar Acara</h2>
+      <ul id="modalEventList"></ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

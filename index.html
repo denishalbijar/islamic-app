@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Islamic Dashboard Modern</title>
+  <!-- Memuat Font Awesome dan Google Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    /* Reset dasar */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #5563de, #28a745);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      color: #333;
+    }
+    header {
+      text-align: center;
+      padding: 20px;
+      color: #fff;
+    }
+    header h1 {
+      font-size: 2em;
+      margin-bottom: 5px;
+    }
+    header p {
+      font-size: 1em;
+      opacity: 0.9;
+    }
+    .dashboard-container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    .dashboard {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+      padding: 40px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 30px;
+      width: 100%;
+      max-width: 800px;
+    }
+    .card {
+      background: linear-gradient(135deg, #5563de, #28a745);
+      color: #fff;
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 36px;
+      text-decoration: none;
+      position: relative;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+    /* Tooltip menggunakan attribute data-tooltip */
+    .card::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      bottom: -35px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #333;
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 4px;
+      font-size: 12px;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .card:hover::after {
+      opacity: 1;
+    }
+    footer {
+      text-align: center;
+      padding: 10px;
+      background: rgba(0,0,0,0.1);
+      color: #fff;
+    }
+    /* Responsif untuk mobile */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.5em;
+      }
+      .dashboard {
+        padding: 20px;
+        gap: 20px;
+      }
+      .card {
+        width: 80px;
+        height: 80px;
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Islamic Dashboard Modern</h1>
+    <p>Mudah, Cepat, dan Inspiratif</p>
+  </header>
+  <div class="dashboard-container">
+    <div class="dashboard">
+      <!-- Baca Al-Quran -->
+      <a href="../al quran dan terjemahan/index.html" class="card" data-tooltip="Baca Al-Quran">
+        <i class="fa-solid fa-book-open"></i>
+      </a>
+      <!-- Kalender Hijriyah -->
+      <a href="../kalender hijriyah/index.html" class="card" data-tooltip="Kalender Hijriyah">
+        <i class="fa-solid fa-calendar-days"></i>
+      </a>
+      <!-- Hadist -->
+      <a href="../hadist/index.html" class="card" data-tooltip="Hadist">
+        <i class="fa-solid fa-quote-left"></i>
+      </a>
+      <!-- Doa Sehari-hari -->
+      <a href="../doa sehari hari/index.html" class="card" data-tooltip="Doa Sehari-hari">
+        <i class="fa-solid fa-praying-hands"></i>
+      </a>
+      <!-- Jadwal Sholat -->
+      <a href="../jadwal sholat/index.html" class="card" data-tooltip="Jadwal Sholat">
+        <i class="fa-solid fa-mosque"></i>
+      </a>
+      <!-- Arah Kiblat -->
+      <a href="../kiblat.html" class="card" data-tooltip="Arah Kiblat">
+        <i class="fa-solid fa-compass"></i>
+      </a>
+    </div>
+  </div>
+  <footer>
+    <p>&copy; 2025 Islamic Dashboard. All rights reserved.</p>
+  </footer>
+</body>
+</html>
