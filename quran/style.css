@@ -1,0 +1,540 @@
+  /* General Styles */
+  body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    /* Tambahkan padding bottom agar konten tidak tertutup footer */
+    padding-bottom: 70px;
+  }
+  /* Header Styles */
+  header {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+  /* Atur container tombol agar berada di kiri dan terpisah dari judul */
+  header > .header-buttons {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  header h1 {
+    margin: 0;
+    text-align: center;
+    width: 100%;
+  }
+  .btn {
+    background: #004d00;
+    color: #fff;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .btn:hover {
+    opacity: 0.9;
+  }
+  .surah-container {
+    padding: 20px;
+  }
+  .surah-container input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  .detail {
+    padding: 20px;
+  }
+  
+  /* Sticky Footer CSS */
+  .em_main_footer {
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    background: #004d00;  /* Latar gelap agar ikon putih terlihat */
+    border-top: 1px solid #eaeaea;
+    padding: 10px 0;
+    text-align: center;
+    z-index: 1000;
+  }
+  .em_body_navigation {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .btn_navLink {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.75rem;
+  }
+  .btn_navLink .icon_current {
+    margin-bottom: 4px;
+  }
+  .btn_navLink:hover {
+    color: #ffcc00;
+  }
+  .items_basket_circle {
+    background: red;
+    color: #fff;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 0.65rem;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+  }
+  /* Reset & dasar */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    color: #333;
+    min-height: 100vh;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  /* Header */
+  header {
+    background: linear-gradient(90deg, #4caf50, #2e7d32);
+    color: #fff;
+    padding: 1rem 1.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  }
+  header h1 {
+    font-size: 1.5rem;
+    flex: 1;
+    text-align: center;
+    letter-spacing: 1px;
+  }
+  header button#backBtn {
+    background: #ffeb3b;
+    color: #2e7d32;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-weight: 600;
+    display: none;
+  }
+  header button#backBtn:hover {
+    background: #fdd835;
+  }
+  /* Surah Container */
+  .surah-container {
+    padding: 1rem;
+    background-color: #e8f5e9;
+    border-bottom: 1px solid #c8e6c9;
+  }
+  .surah-container input {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #c8e6c9;
+    border-radius: 8px;
+    outline: none;
+    font-size: 1rem;
+    transition: border 0.3s ease;
+  }
+  .surah-container input:focus {
+    border-color: #66bb6a;
+  }
+  /* Tampilan kotak-kotak daftar surah dalam grid */
+  .surah-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 0.5rem;
+    max-height: 300px;
+    overflow-y: auto;
+    padding-bottom: 0.5rem;
+  }
+  /* Masing-masing item surah terdiri dari box untuk detail dan tombol bookmark */
+  .surah-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #a5d6a7;
+    border-radius: 8px;
+    padding: 0.75rem;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  .surah-item:hover {
+    background-color: #81c784;
+    transform: translateY(-2px);
+  }
+  .surah-button {
+    flex: 1;
+    background: none;
+    border: none;
+    text-align: left;
+    font-weight: 500;
+    color: inherit;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  .bookmark-surah-list {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #FFD700;
+    margin-left: 0.25rem;
+  }
+  /* Main Detail / Dashboard */
+  main.detail {
+    padding: 1.5rem;
+    background: #fff;
+    margin: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  }
+  main.detail h2 {
+    margin-bottom: 1rem;
+    color: #2e7d32;
+    text-align: center;
+  }
+  .bismillah {
+    font-size: 1.8rem;
+    text-align: center;
+    margin: 1.25rem 0;
+    font-style: italic;
+    color: #555;
+  }
+  /* Tombol Murottal & Player */
+  #murottal-container {
+    margin-bottom: 1.25rem;
+  }
+  #murottal-btn {
+    background-color: #ffeb3b;
+    color: #2e7d32;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-weight: 600;
+    display: block;
+    margin: 0 auto 1rem;
+  }
+  #murottal-btn:hover {
+    background-color: #fdd835;
+  }
+  #murottal-player {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+  #murottal-player.open {
+    max-height: 120px;
+  }
+  #murottal-player button {
+    padding: 0.5rem 0.75rem;
+    background-color: #2e7d32;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-size: 0.9rem;
+  }
+  #murottal-player button:hover {
+    background-color: #1b5e20;
+  }
+  #murottal-progress {
+    flex: 1;
+  }
+  /* Dropdown Pilih Ayat */
+  #ayahDropdown {
+    width: 100%;
+    max-width: 400px;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #c8e6c9;
+    border-radius: 8px;
+    outline: none;
+    font-size: 1rem;
+    background-color: #fff;
+  }
+  @media (max-width: 480px) {
+    #ayahDropdown {
+      font-size: 0.9rem;
+      padding: 0.5rem;
+    }
+  }
+  /* Ayat Container */
+  .ayah-container {
+    background: #fafafa;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+    padding: 1rem;
+    margin-bottom: 1.25rem;
+    transition: transform 0.2s ease;
+  }
+  .ayah-container:hover {
+    transform: translateY(-2px);
+  }
+  .ayah-number {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #2e7d32;
+  }
+  .arabic {
+    font-size: 1.8rem;
+    text-align: right;
+    margin: 0.5rem 0;
+    direction: rtl;
+    color: #424242;
+  }
+  .latin,
+  .translation {
+    margin: 0.5rem 0;
+    line-height: 1.5;
+    color: #616161;
+  }
+  /* Kontrol Umum */
+  .controls {
+    margin-top: 0.5rem;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  .controls button {
+    background-color: #ffeb3b;
+    color: #2e7d32;
+    border: none;
+    border-radius: 6px;
+    padding: 0.5rem 0.75rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-weight: 600;
+  }
+  .controls button:hover {
+    background-color: #fdd835;
+  }
+  /* Dropdown Share */
+  .share-dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  .share-dropdown .share-options {
+    display: none;
+    position: absolute;
+    top: 110%;
+    left: 0;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    min-width: 140px;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  .share-dropdown .share-options button {
+    width: 100%;
+    border: none;
+    background: none;
+    text-align: left;
+    padding: 0.5rem 0.75rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  .share-dropdown .share-options button:hover {
+    background: #f5f5f5;
+  }
+  /* Custom Audio Player per ayat */
+  .audio-player {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    background: #e0f2f1;
+    border: 1px solid #b2dfdb;
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+  }
+  .audio-player button {
+    padding: 0.5rem 0.75rem;
+    background-color: #2e7d32;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-size: 0.9rem;
+  }
+  .audio-player button:hover {
+    background-color: #1b5e20;
+  }
+  .audio-player input[type="range"] {
+    flex: 1;
+    margin: 0 0.5rem;
+  }
+  .audio-player span {
+    white-space: nowrap;
+    font-size: 0.9rem;
+  }
+  /* Dashboard Bookmark */
+  .dashboard-section {
+    margin-bottom: 1.5rem;
+  }
+  .dashboard-section h3 {
+    margin-bottom: 0.5rem;
+    color: #2e7d32;
+  }
+  .dashboard-section ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  .dashboard-section ul li a {
+    color: #2e7d32;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 0.25rem 0;
+    display: block;
+    transition: background 0.3s ease;
+  }
+  .dashboard-section ul li a:hover {
+    background: #e8f5e9;
+    border-radius: 4px;
+  }
+  /* Navigasi Bottom */
+  .surah-navigation-bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+  }
+  .surah-navigation-bottom button {
+    background-color: #a5d6a7;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    font-weight: 500;
+  }
+  .surah-navigation-bottom button:hover {
+    background-color: #81c784;
+    transform: translateY(-2px);
+  }
+  #btnBack {
+    background-color: yellow;
+    color: green;
+    border: none;
+    padding: 5px 15px;
+    font-size: 17px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .footer-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #222;
+    color: #fff;
+    z-index: 1000;
+    padding: 10px 0;
+  }
+  .footer-nav nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .footer-nav a, .footer-nav button {
+    background: none;
+    border: none;
+    color: inherit;
+    text-decoration: none;
+    text-align: center;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  .footer-nav i {
+    display: block;
+    font-size: 20px;
+    margin-bottom: 2px;
+  }
+  /* Modal 'Lainnya' Styling */
+  #mdllOthers.modal {
+    display: none; 
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+  }
+  #mdllOthers .modal-dialog {
+    margin: 100px auto;
+    max-width: 500px;
+  }
+  #mdllOthers .modal-content {
+    position: relative;
+    padding: 20px;
+    border-radius: 8px;
+    background: #fff;
+  }
+  #mdllOthers .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .np__bkOperationsService {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  .em__actions .btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    text-decoration: none;
+    color: #000;
+    width: 100px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 5px;
+  }
+  .em__actions .btn .icon {
+    font-size: 24px;
+    margin-bottom: 5px;
+  }

@@ -1,0 +1,5 @@
+RewriteEngine On
+RewriteBase /islamic/
+
+# Arahkan folder agar bisa diakses tanpa index.php
+RewriteRule ^(doa|hadist|kalender|quran|)/?$ $1/index.php [L]

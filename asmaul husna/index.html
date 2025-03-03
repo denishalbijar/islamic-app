@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asmaul Husna</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Asmaul Husna</h1>
+        <button onclick="fetchRandomHusna()">Tampilkan Asmaul Husna Acak</button>
+        <div id="husna" class="husna-card"></div>
+        <h2>Daftar Lengkap Asmaul Husna</h2>
+        <div class="search-container">
+            <input type="text" id="search" placeholder="Cari Asmaul Husna..." onkeyup="searchHusna()">
+            <i class="fas fa-search"></i>
+        </div>
+        <div id="all-husna"></div>
+    </div>
+</body>
+</html>
