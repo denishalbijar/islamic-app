@@ -1,0 +1,67 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f1f5f9;
+    color: #333;
+  }
+  /* Header Minimal Modern */
+  .navbar {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #006400 !important;
+  }
+  /* Main Container */
+  main {
+    padding: 2rem 1rem;
+  }
+  h1 {
+    font-weight: 600;
+    color: #004d00;
+  }
+  /* Video Card Styling */
+  .card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    background-color: #fff;
+  }
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  .card-img-top {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    object-fit: cover;
+    height: 200px;
+  }
+  .card-body {
+    padding: 1rem;
+    text-align: center;
+  }
+  .card-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+  }
+  .btn-primary {
+    background-color: #006400;
+    border: none;
+    border-radius: 25px;
+    padding: 0.5rem 1.5rem;
+    transition: background-color 0.3s;
+  }
+  .btn-primary:hover {
+    background-color: #004d00;
+  }
+  @media (max-width: 576px) {
+    .navbar-brand {
+      font-size: 1.25rem;
+    }
+    main {
+      padding: 1rem;
+    }
+  }

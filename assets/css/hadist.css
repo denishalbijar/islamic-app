@@ -1,0 +1,410 @@
+:root {
+  --primary-color: #667eea;
+  --secondary-color: #764ba2;
+  --accent-color: #38a169;
+  --bg-color: #f7f7f7;
+  --text-color: #333;
+  --card-bg: #fff;
+  --border-radius: 8px;
+  --transition-speed: 0.3s;
+}
+
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-bottom: 70px; /* agar konten tidak tertutup footer */
+}
+
+/* Header */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: #fff;
+  padding: 20px 40px;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.header-left {
+  display: flex;
+  align-items: center;
+}
+.header-left button {
+  margin-right: 10px;
+  background-color: #27ae60;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.header-left button:hover {
+  background-color: #219150;
+}
+header h1 {
+  margin: 0;
+  font-size: 1.8em;
+}
+#viewBookmarks {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  background: var(--accent-color);
+  border: none;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background var(--transition-speed);
+}
+#viewBookmarks:hover {
+  background: #2f855a;
+}
+
+/* Container */
+.container {
+  display: flex;
+  max-width: 1200px;
+  margin: 30px auto;
+  gap: 20px;
+  padding: 0 20px;
+}
+
+/* Sidebar */
+.sidebar {
+  flex: 0 0 320px;
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  overflow-y: auto;
+  max-height: 80vh;
+}
+.sidebar h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: var(--primary-color);
+  border-bottom: 2px solid #eaeaea;
+  padding-bottom: 8px;
+}
+.sidebar label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #555;
+}
+.sidebar select {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  transition: border-color var(--transition-speed);
+}
+.sidebar select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+.sidebar li {
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  background: #fafafa;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background var(--transition-speed), transform 0.2s;
+}
+.sidebar li:hover {
+  background: #f0f0f0;
+  transform: translateX(5px);
+}
+.load-more-btn {
+  width: 100%;
+  padding: 12px;
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background var(--transition-speed);
+  margin-top: 10px;
+}
+.load-more-btn:hover {
+  background: #5a67d8;
+}
+
+/* Content */
+.content {
+  flex: 1;
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.content h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+  border-bottom: 2px solid #eaeaea;
+  padding-bottom: 10px;
+}
+.arabic {
+  font-size: 1.7rem;
+  text-align: right;
+  direction: rtl;
+  margin-bottom: 20px;
+  color: #2d3748;
+  line-height: 1.8;
+}
+.translation {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #4a5568;
+  text-align: justify;
+}
+
+/* Share Dropdown */
+.share-dropdown {
+  position: relative;
+  display: inline-block;
+  margin-top: 20px;
+}
+.share-toggle {
+  padding: 8px 12px;
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 1rem;
+}
+.share-menu {
+  display: none;
+  position: absolute;
+  top: 110%;
+  left: 0;
+  background: #fff;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  z-index: 10;
+  width: 220px;
+}
+.share-dropdown.active .share-menu {
+  display: block;
+}
+.share-menu button {
+  display: block;
+  width: 100%;
+  padding: 10px 15px;
+  background: transparent;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background var(--transition-speed);
+}
+.share-menu button:hover {
+  background: #f0f0f0;
+}
+
+/* Tombol Copy Hadits */
+.copy-hadith-btn {
+  margin-top: 20px;
+  padding: 10px 15px;
+  background: #4299e1;
+  color: #fff;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background var(--transition-speed);
+}
+.copy-hadith-btn:hover {
+  background: #3182ce;
+}
+
+/* Bookmark Icon */
+.bookmark-icon {
+  font-size: 2rem;
+  user-select: none;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.bookmarked {
+  color: gold;
+}
+.not-bookmarked {
+  color: #ccc;
+}
+
+/* Tombol Navigasi Hadits */
+.nav-btn {
+  padding: 10px 15px;
+  background: #718096;
+  color: #fff;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background var(--transition-speed);
+}
+.nav-btn:hover {
+  background: #4a5568;
+}
+
+/* Tombol Kembali telah dihapus sesuai permintaan */
+
+/* Dashboard Bookmark Modal */
+#bookmarkDashboard {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+#bookmarkDashboard .dashboard-content {
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  width: 90%;
+  max-width: 600px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+#bookmarkDashboard h2 {
+  margin-bottom: 20px;
+  color: var(--primary-color);
+  border-bottom: 2px solid #eaeaea;
+  padding-bottom: 10px;
+}
+#bookmarkDashboard ul {
+  list-style: none;
+  padding: 0;
+}
+#bookmarkDashboard li {
+  padding: 10px;
+  border-bottom: 1px solid #eaeaea;
+  cursor: pointer;
+  transition: background var(--transition-speed);
+}
+#bookmarkDashboard li:hover {
+  background: #f0f0f0;
+}
+#bookmarkDashboard .close-dashboard {
+  margin-top: 20px;
+  padding: 10px 15px;
+  background: #e53e3e;
+  color: #fff;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}
+
+/* Footer Sticky */
+.em_main_footer {
+  position: sticky;
+  bottom: 0;
+  background: #004d00;
+  border-top: 1px solid #eaeaea;
+  padding: 10px 0;
+  text-align: center;
+  width: 100%;
+}
+.em_body_navigation {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.btn_navLink {
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.75rem;
+  margin: 5px;
+}
+.btn_navLink .icon_current {
+  margin-bottom: 4px;
+}
+.btn_navLink:hover {
+  color: #ffcc00;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  .sidebar {
+    max-height: none;
+    margin-bottom: 20px;
+  }
+  #viewBookmarks {
+    position: static;
+    display: block;
+    margin: 10px auto;
+  }
+}
+@media (max-width: 576px) {
+  h2 {
+    font-size: 1.5rem;
+  }
+  #currentTimeDisplay {
+    font-size: 1.5rem;
+  }
+  .nav-btn, .btn-custom, .btn {
+    font-size: 0.9rem;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    background: linear-gradient(135deg, #343a40, #212529);
+    color: #f8f9fa;
+  }
+  .container {
+    background-color: #343a40;
+    box-shadow: none;
+  }
+  .form-section, .table-responsive, .daily-box {
+    background-color: #495057;
+    border-color: #6c757d;
+  }
+  .table-responsive thead {
+    background: linear-gradient(135deg, #0d6efd, #0a58ca);
+  }
+  .daily-time {
+    color: #0d6efd;
+  }
+  .view-selector label {
+    color: #ced4da;
+  }
+}
